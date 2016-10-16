@@ -8,6 +8,12 @@ namespace MediaPresentationBotService.Models
 {
     public abstract class AbstractMediaProviderModel
     {
+        protected IMediaServiceConfiguration _mediaServiceConfiguration;
+
+        public AbstractMediaProviderModel(IMediaServiceConfiguration serviceConfiguration)
+        {
+            _mediaServiceConfiguration = serviceConfiguration;
+        }
         public virtual async Task ConnectAsync()
         {
             throw new NotImplementedException();
@@ -19,7 +25,7 @@ namespace MediaPresentationBotService.Models
         }
 
 
-        public virtual async Task RetrieveData()
+        public virtual async Task RetrieveDataAsync()
         {
             throw new NotImplementedException();
         }
